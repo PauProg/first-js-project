@@ -54,11 +54,15 @@ function allBor(){
     }
 }
 
-function rad(){
-    if(elemento.classList.contains("radius")){
-        alert("El objeto ya tiene border radius");
-    } else {
-        elemento.className = "";
-        elemento.classList.add("radius");
-    }
-}
+
+// Selecciona el elemento input
+const colorInput = document.getElementById('color');
+
+// Agrega un listener para el evento change
+colorInput.addEventListener('change', function() {
+    // Obtiene el valor del input
+    const selectedColor = this.value;
+
+    // Usa la variable en CSS
+    document.documentElement.style.setProperty('--custom-color', selectedColor);
+});
